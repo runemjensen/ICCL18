@@ -1,0 +1,9 @@
+reset session
+set lmargin at screen 0.1
+set xlabel "Draft (m)" offset 0,-0.5 font "Helvetica,20"
+set ylabel "Submerged Area (m2)" offset -3,0 font "Helvetica,20"
+set tics font "Helvetica,20"
+set xrange [4:16]
+set yrange [0:900]
+plot "BonjeanDataAreatest.txt" using 1:32  notitle w lines, \
+     "BonjeanDataAreatest.txt" using 1:5 notitle

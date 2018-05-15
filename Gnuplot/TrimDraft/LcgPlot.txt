@@ -1,0 +1,16 @@
+reset session
+set lmargin at screen 0.1
+set bmargin at screen 0.1
+set size square
+set ylabel "SCM Lcg (m)" offset -3,0 font "Helvetica,24"
+set xlabel "Real Lcg (m)" offset 0,-1 font "Helvetica,24"
+set tics font "Helvetica,24"
+set xrange [-15:-4]
+set yrange [-15:-4]
+set key font "Helvetica,20"
+set parametric
+set key bottom right
+plot  [t=-15:-4] t,t notitle w lines lt -1,\
+      "TrimDraftData1.txt" using 3:6 ps 5 title "100%" ,\
+      "TrimDraftData1.txt" using 9:12 ps 5 title "80%" ,\
+      "TrimDraftData1.txt" using 15:18 ps 5 title "60%" 

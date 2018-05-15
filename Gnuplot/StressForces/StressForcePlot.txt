@@ -1,0 +1,19 @@
+reset session
+set lmargin at screen 0.1
+#set rmargin at screen 0.1
+set bmargin at screen 0.1
+set ylabel "Shear Force (percent of maximum)" offset -3,0 font "Helvetica,24"
+set xlabel "Longitudinal Position  (m)" offset 0,-1 font "Helvetica,24"
+set tics font "Helvetica,24"
+set xrange [-200:200]
+set yrange [-130:130]
+set key font "Helvetica,20"
+#set key bottom right
+plot "StressForceData26.txt" using 1:4 ps 5 title "SF Real 26" with line ,\
+     "StressForceData26.txt" using 1:2 ps 5 title "SF 26" ,\
+	 "StressForceData13.txt" using 1:2 ps 5 title "SF 13" ,\
+     "StressForceData10.txt" using 1:2 ps 5 title "SF 10" ,\
+     "StressForceData8.txt" using 1:2 ps 5 title "SF 8" ,\
+     "StressForceData6.txt" using 1:2 ps 5 title "SF 6" ,\
+     "StressForceData4.txt" using 1:2 ps 5 title "SF 4" 
+     

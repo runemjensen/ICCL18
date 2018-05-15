@@ -1,0 +1,19 @@
+reset session
+set lmargin at screen 0.1
+set bmargin at screen 0.1
+set size square
+set ylabel "SCM Trim (m)" offset -3,0 font "Helvetica,24"
+set xlabel "Real Trim (m)" offset 0,-1 font "Helvetica,24"
+set tics font "Helvetica,24"
+set xrange [-4:3]
+set yrange [-4:3]
+set key font "Helvetica,20"
+set parametric
+set key bottom right
+plot [t=-4:3] t,t notitle w lines lt -1 ,\
+     "TrimDraftData2.txt" using 1:4 ps 5 title "26" ,\
+     "TrimDraftData2.txt" using 1:5 ps 5 title "13" ,\
+     "TrimDraftData2.txt" using 1:6 ps 5 title "10" ,\
+     "TrimDraftData2.txt" using 1:7 ps 5 title "8" ,\
+     "TrimDraftData2.txt" using 1:8 ps 5 title "6" ,\
+     "TrimDraftData2.txt" using 1:9 ps 5 title "4"
