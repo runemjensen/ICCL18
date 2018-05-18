@@ -15,20 +15,21 @@
 \usepackage{multirow}
 \usepackage{floatrow}
 
+
 \begin{document}
 %
-\title{The Standard Capacity Model: \\Towards a Polyhedron Representation of\\ Container Vessel Capacity\thanks{This research is supported by the Danish Maritime Fund grant no. 2016-064.}}
+\title{The Standard Capacity Model: \\Towards a Polyhedron Representation of\\ Container Vessel Capacity\thanks{This research is supported by the Danish Maritime Fund, Grant No. 2016-064.}}
 %
 \titlerunning{The Standard Capacity Model}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{Mai Lise Ajspur\inst{1} \and
-Rune M{\o}ller Jensen\inst{1}}
+\author{Rune M{\o}ller Jensen\inst{1} \and
+Mai Lise Ajspur\inst{1}}
 %
 %\email{ajspur,rmj@itu.dk}
 
-\authorrunning{M.L. Ajspur and R.M. Jensen}
+\authorrunning{R.M. Jensen and M.L. Ajspur}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
@@ -69,7 +70,7 @@ Container vessels mainly transport ISO containers with the dominating lengths 20
 As shown in Fig.~\ref{fig:vessel}, the cargo space of a container vessel is divided into {\em bays}. A bay consist of stacks (rows) of cells. A cell is divided into a fore and aft \emph{slot} and can accordingly hold one 40' (or 45') container or two 20' containers. Some cells have power plugs allowing reefers to be stowed. Each bay is divided into stowage areas above and under {\em hatch covers} that separate on deck and below deck cells. A vessel has a cargo securing manual that details how the vessel can be stowed securely.    
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.24]{figures/vesselAndForces.pdf}
+		\includegraphics[scale=1.0]{figures/vesselAndForces.pdf}
 	\caption{Top: the structure of a cellular container vessel and an example of a section partitioning that can be used by the standard capacity model. Bottom: an example of the shear forces (blue curve) and bending moments (red curve) along a vessel. Blue plus signs and red crosses are the associated force limits given by the classification society for a set of frame positions.} 
 	\label{fig:vessel}
 \end{figure}
@@ -107,11 +108,11 @@ The mass of a section is the sum of masses of lightship blocks, ballast water, f
 
 The buoyancy of a section depends on the draft of the section rather than its weight. It can be estimated from the Bonjean table of the vessel. Recall that the Bonjean table for each station gives the submerged area of a cross section at the station as a function of the mid-ship draft at even keel. Fig~\ref{fig:Bonjean} shows the Bonjean data of a 15000 TEU container vessel with a representative fine form hull. Notice that the curves are shown over the complete operational draft range of the vessel. The lightship draft is about four meters and the maximum summer draft is about 16 meters.
 \begin{figure}[h!]
-  \begin{tabular}{ccc}
- \includegraphics[scale=0.14]{figures/BonjeanFore} &  &   \includegraphics[scale=0.14]{figures/BonjeanAft} \\
-          (a)                              &  &                   (b)   \\
- \includegraphics[scale=0.14]{figures/BonjeanLinear1} &  &   \includegraphics[scale=0.14]{figures/BonjeanLinear2} \\
-          (c)                              &  &                   (d)   
+  \begin{tabular}{cc}
+ \includegraphics[scale=1]{figures/BonjeanFore} &    \includegraphics[scale=1]{figures/BonjeanAft} \\
+          (a)                              &                     (b)   \\
+ \includegraphics[scale=1]{figures/BonjeanLinear1} &     \includegraphics[scale=1]{figures/BonjeanLinear2} \\
+          (c)                              &                     (d)   
   \end{tabular}
   \caption{Subermged area of fore (a) and aft (b) stations as a function of mid-ship draft at even keel.}\label{fig:Bonjean}
 \end{figure}
@@ -137,7 +138,7 @@ where $d$ is the density of salt water, $f_s$ is the longitudinal fraction of st
 of the vessel spans station $i$ to $j$, and $l_s$ is the distance between the two stations.
 \begin{figure}[h!]
 \begin{center}
-  \includegraphics[scale=0.5]{figures/BouyancyApprox}
+  \includegraphics[scale=1]{figures/BouyancyApprox}
 \end{center}
 \caption{Bouyancy approximation of a section.}
 \label{fig:Bapprox}
@@ -223,117 +224,122 @@ Equation \eqref{eq:constr2} defines the buoyancy of section $s$ as a linear expr
  
 \section{Experimental Results}
  
-The objective of the experiments is to evaluate the hydrostatic core of SCM introduced in this paper. Specifically, we investigate the accuracy of the model's hydrostatic parameters as function of given weight distributions and the accuracy of the model in terms of number of sections.
+The purpose of the experiments is to evaluate the hydrostatic core of SCM introduced in this paper. Specifically, we investigate the accuracy of the model's hydrostatic parameters as function of given weight distributions and the accuracy of the model in terms of the number of sections in the section partitioning.
 
-The experiments are based on the 15K TEU vessel introduced in last section. For this vessel, we have Bonjean and hydrostatic tables approved by its classification society. In addition, we use an approved loading computer for the vessel to calculate stress forces in different conditions (CITE MACS3).
+The experiments are based on the 15K TEU vessel introduced in last section. For this vessel, we have accesses to Bonjean and hydrostatic tables approved by its classification society. In addition, we use an approved loading computer for the vessel to calculate stress forces in different conditions (CITE MACS3).
 
-We have chosen three different weight levels at 100\%, 80\%, and 60\% of maximum summer displacement. Notice that since about 35\% of the weight of the vessel is steel and fuel, it is usually less than half full of cargo at 60\% of maximum displacement.   
+We have chosen three different weight levels at 100\%, 80\%, and 60\% of maximum summer displacement. Notice that since about 35\% of the weight of the vessel is steel and fuel, it is usually less than half volume full of cargo at 60\% of maximum displacement. For each of the three displacement levels, we use 10 different cargo weight distributions over its bays corresponding to an operational lcg range. Water ballast tanks are assumed to be empty, while all other tanks are assumed to be 70\% volume full.
 
-For each of the three displacement levels, we use 10 different cargo weight distributions over its bays corresponding to an operational lcg range. Water ballast tanks are assumed to be empty, while all other tanks are assumed to be 70\% volume full.
+The real hydrostatic equilibrium of the vessel has been approximated as follows. We first compute the displacement and lcg of the vessel using the longitudinal positions of lightship blocks, tanks, and bays stowed with one of the cargo weight distributions. Since these parameters decide the hydrostatic equilibrium of the vessel in the longitudinal dimension, we can lookup the associated draft and trim in the hydrostatic table.~\footnote{Due to the sparsity of the hydrostatic table, we in practice interpolate the trim and draft from nearby entries.}    
 
-The real hydrostatic equilibrium of the vessel has been approximated as follows. We first compute the lcg of the vessel using the longitudinal positions of lightship blocks, tanks, and bays stowed with one of the cargo weight distributions. Since the vessel has a hydrostatic equilibrium for a particular displacement and lcg, we can interpolate the hydrostatic table to find the draft and trim associated with this equilibrium.    
+The SCM model has been implemented in Java and solved with the JAMA matrix package for given weight distributions. From these computations, we get the trim, draft (adjusted from aft to mid-ship draft), and stress forces predicted by SCM. Lcg is non-linear in the SCM variables and therefore not included in model. For a given cargo weight distribution, however, we can compute the underlying lcg of SCM, since it assumes that all weights of a section $s$ act from their approximated center of gravity $L^G_s$. 
 
-The SCM model has been implemented in Java and solved with the JAMA matrix package for given weight distributions. From these computations, we get the trim, draft (adjusted from aft to mid-ship draft), and stress forces predicted by SCM. Lcg is non-linear in the variables and therefore not included in SCM. For a given cargo weight distribution, however, we can compute the underlying lcg of SCM, since it assumes that all weights of a section $s$ act from their approximated center of gravity $L^G_s$. 
+\subsection{Variable Displacement, Fixed Number of Sections}
 
-\subsection{Variable Displacement for Fixed Section Partitioning}
-
-In the first set of experiments, we use the finest level of detail of SCM, where each section at most holds one bay. This model has 26 sections. Table~\ref{tbl:variabledips} shows the trim, draft, and lcg predicted by SCM for 
+In the first set of experiments, we use the highest level of detail of SCM, where each section at most holds a single bay. This model has 26 sections. Table~\ref{tbl:variabledips} shows the trim, draft, and lcg predicted by SCM for 
 100\%, 80\%, and 60\% of maximum displacement.
 \begin{table}[h!]
-\begin{tabular}{l|@{\:\:}rrr@{\:\:}|@{\:\:}rrr}              
-&\multicolumn{3}{c}{Real Values} & \multicolumn{3}{c}{SCM Values}\\
-Displacement (ton) &  Trim (m)  &   Draft (m)  &   Lcg (m) &   Trim (m)  &  Draft (m) &   Lcg (m)\\
+\begin{tabular}{l@{\:\:}rrrc@{\:\:}@{\:\:}rrr}              
+&\multicolumn{3}{c}{Real Values} & & \multicolumn{3}{c}{SCM Values}\\[0.1ex] \cline{2-4} \cline{6-8} 
+\\[-1ex]
+Disp. (ton) &  Trim (m)  &   Draft (m)  &   Lcg (m) & &  Trim (m)  &  Draft (m) &   Lcg (m)\\
 \hline \rule{0pt}{3ex}
-218788      &2.01      &15.6    &-14.9   &4.19    &16.0&-14.9  \\
-(100\%)                &1.61    &15.6    &-14.1   &3.55    &16.0&-14.2  \\
-                &1.20    &15.6    &-13.3   &2.90    &16.0&-13.4  \\
-                &0.80    &15.7    &-12.6   &2.26    &16.0&-12.6  \\
-                &0.40    &15.7    &-11.8   &1.63    &16.0&-11.9  \\
-                &0.00    &15.7    &-11.0   &0.99    &16.1&-11.1  \\
-                &-0.41   &15.7    &-10.3   &0.36    &16.1&-10.3  \\
-                &-0.80   &15.8    &-9.5     &-0.26   &16.1&-9.6   \\
-                &-1.21   &15.8    &-8.8     &-0.88   &16.1&-8.8   \\
-                &-1.61   &15.8    &-8.0     &-1.50   &16.1&-8.1   \\
+218788      &2.01      &15.6    &-14.9  & &4.19    &16.0&-14.9  \\
+(100\%)                &1.61    &15.6    &-14.1 &  &3.55    &16.0&-14.2  \\
+                &1.20    &15.6    &-13.3 &  &2.90    &16.0&-13.4  \\
+                &0.80    &15.7    &-12.6 &  &2.26    &16.0&-12.6  \\
+                &0.40    &15.7    &-11.8 &  &1.63    &16.0&-11.9  \\
+                &0.00    &15.7    &-11.0 &  &0.99    &16.1&-11.1  \\
+                &-0.41   &15.7    &-10.3 &  &0.36    &16.1&-10.3  \\
+                &-0.80   &15.8    &-9.5  &   &-0.26   &16.1&-9.6   \\
+                &-1.21   &15.8    &-8.8  &   &-0.88   &16.1&-8.8   \\
+                &-1.61   &15.8    &-8.0  &   &-1.50   &16.1&-8.1   \\
 \hline \rule{0pt}{3ex}
-175030      &2.01      &13.1    &-13.0   &2.35    &13.1&-13.1  \\
-(80\%)  &1.61    &13.1    &-12.2   &1.82    &13.1&-12.3  \\
-                &1.20    &13.1    &-11.4   &1.27    &13.1&-11.4  \\
-                &0.80    &13.2    &-10.6   &0.73    &13.1&-10.6  \\
-                &0.39    &13.2    &-9.8     &0.20    &13.1&-9.8   \\
-                &0.00    &13.2    &-9.0     &-0.32   &13.2&-9.0   \\
-                &-0.40   &13.2    &-8.3     &-0.82   &13.2&-8.3   \\
-                &-0.80   &13.2    &-7.5     &-1.34   &13.2&-7.5   \\
-                &-1.21   &13.2    &-6.7     &-1.85   &13.2&-6.7   \\
-                &-1.61   &13.3    &-6.0     &-2.35   &13.2&-6.0   \\
+175030      &2.01      &13.1    &-13.0  & &2.35    &13.1&-13.1  \\
+(80\%)  &1.61    &13.1    &-12.2  & &1.82    &13.1&-12.3  \\
+                &1.20    &13.1    &-11.4 &  &1.27    &13.1&-11.4  \\
+                &0.80    &13.2    &-10.6 &  &0.73    &13.1&-10.6  \\
+                &0.39    &13.2    &-9.8  &   &0.20    &13.1&-9.8   \\
+                &0.00    &13.2    &-9.0  &   &-0.32   &13.2&-9.0   \\
+                &-0.40   &13.2    &-8.3  &   &-0.82   &13.2&-8.3   \\
+                &-0.80   &13.2    &-7.5  &   &-1.34   &13.2&-7.5   \\
+                &-1.21   &13.2    &-6.7  &   &-1.85   &13.2&-6.7   \\
+                &-1.61   &13.3    &-6.0  &   &-2.35   &13.2&-6.0   \\
 \hline \rule{0pt}{3ex}
-131272  &2.02      &10.4    &-12.3   &1.71    &10.2&-12.3  \\
-(60\%)  &1.61    &10.4    &-11.4   &1.25    &10.2&-11.4  \\
-                &1.21    &10.4    &-10.5   &0.80    &10.2&-10.5  \\
-                &0.80    &10.4    &-9.6     &0.36    &10.2&-9.6   \\
-                &0.41    &10.5    &-8.7     &-0.07   &10.2&-8.8   \\
-                &0.00    &10.5    &-7.8     &-0.53   &10.2&-7.8   \\
-                &-0.39   &10.5    &-7.0     &-0.96   &10.2&-7.0   \\
-                &-0.80   &10.5    &-6.1     &-1.39   &10.2&-6.1   \\
-                &-1.21   &10.5    &-5.2     &-1.84   &10.3&-5.2   \\
-                &-1.60   &10.5    &-4.4     &-2.25   &10.3&-4.4   \\
+131272  &2.02      &10.4    &-12.3  & &1.71    &10.2&-12.3  \\
+(60\%)  &1.61    &10.4    &-11.4  & &1.25    &10.2&-11.4  \\
+                &1.21    &10.4    &-10.5  & &0.80    &10.2&-10.5  \\
+                &0.80    &10.4    &-9.6   &  &0.36    &10.2&-9.6   \\
+                &0.41    &10.5    &-8.7   &  &-0.07   &10.2&-8.8   \\
+                &0.00    &10.5    &-7.8   &  &-0.53   &10.2&-7.8   \\
+                &-0.39   &10.5    &-7.0   &  &-0.96   &10.2&-7.0   \\
+                &-0.80   &10.5    &-6.1   &  &-1.39   &10.2&-6.1   \\
+                &-1.21   &10.5    &-5.2   &  &-1.84   &10.3&-5.2   \\
+                &-1.60   &10.5    &-4.4   &  &-2.25   &10.3&-4.4   \\
 \end{tabular}
 \caption{Trim, draft, and lcg predicted by SCM for 100\%, 80\%, and 60\% of maximum displacement using a partitioning with 26 sections.}
 \label{tbl:variabledips}
 \end{table}
-The draft predictions are in general very accurate with some deviation up to 40 centimetres mainly seen at 100\% of maximum displacement. The correlations between the real trim and lcg and the predicted trim and lcg are shown in Fig.\ref{fig:trimlcgscatter}(a) and (b), respectively.
+The draft predictions are quite accurate. The highest deviation about 40 centimetres and only seen at 100\% of maximum displacement. 
+
+The correlations between the real trim and lcg and the predicted trim and lcg are shown in Fig.\ref{fig:trimlcgscatter}(a) and (b), respectively.
 \begin{figure}[h!]
 \begin{center}
- \begin{tabular}{ccc}
-  \includegraphics[scale=0.15]{figures/TrimScatter} & & \includegraphics[scale=0.15]{figures/LcgScatter} \\
-  (a) & \hspace{5mm} & (b)
+ \begin{tabular}{cc}
+  \includegraphics[scale=0.98]{figures/TrimScatter} &  \includegraphics[scale=0.997]{figures/LcgScatter} \\
+  (a) &  (b)
 \end{tabular}  
 \end{center}
 \caption{Correlations between real and predicted trim (a) and lcg (b) for a fixed partitioning with 26 sections and 60\%, 80\%, and 100\% of maximum displacement.}
 \label{fig:trimlcgscatter}
 \end{figure}
-As depicted in the Fig.~\ref{fig:trimlcgscatter}(b) lcg is highly accurate for all weight distributions. We have that the longitudinal position of cargo weight is at the center of sections independently of the numbef of section. This, however, is not the case for lightship and tank blocks that usually are misaligned with section boundaries. What the results show is that impact on lcg at this level detail is negligible. The trim estimates shown in Fig.~\ref{fig:trimlcgscatter}(a) are very accurate for 80\% and 60\% of maximum displacement. Keep in mind that the vessel is almost 400 meters long, so the seen differences about 30 centimetres is an angular error of less than 0.1\%. That said, accurate trim estimates are highly valuable for the industry. We attribute the higher error at 100\% of maximum displacement to the underestimate of the buoyancy of the stern.
- 
- 
- 
-\subsection{Variable Section Partitioning for Fixed Displacement}
+As depicted in the Fig.~\ref{fig:trimlcgscatter}(b), the lcg prediction of SCM is highly accurate for all weight distributions. This is not a trivial result. We have that the longitudinal position of cargo weight is at the center of sections independently of the number of section. This, however, is not the case for lightship and tank blocks that usually are misaligned with section boundaries. What the results show is that impact on lcg at this level detail is negligible. 
 
-In the second set of experiments, we fix the displacement at 80\% of maximum  displacement, while the numbers of sections vary from 26 to 4. The trim and lcg predictions are shown in Table~\ref{tbl:trimVarPart} and \ref{tbl:lcgVarPart}, respectively.
+An accurate lcg prediction is needed for an accurate trim prediction of SCM. The trim prediction, however, also includes error caused by the buoyancy approximation. Nevertheless, SCM's trim predictions shown in Fig.~\ref{fig:trimlcgscatter}(a) are very accurate for 80\% and 60\% of maximum displacement. Keep in mind that the vessel is almost 400 meters long, so the seen differences about 30 centimetres is an angular error of less than 0.1\%. We attribute the higher error at 100\% of maximum displacement to the underestimate of the buoyancy of the stern. We also notice that all trim curves are close to a straight line. This indicates that it might be possible to add linear biases to the SCM model to increase its accuracy further. 
+ 
+
+%HERE RMJ
+ 
+ 
+\subsection{Variable Number of Sections, Fixed Displacement}
+
+In the second set of experiments, we fix the displacement to 80\% of maximum, while the numbers of sections vary from 26 to 4. The trim and lcg predictions are shown in Table~\ref{tbl:trimVarPart} and \ref{tbl:lcgVarPart}, respectively.
 \begin{table}[h!]
-\begin{tabular}{rrr|rrrrrr}
-\multicolumn{3}{c|}{Real Values}&\multicolumn{6}{c}{SCM Trim for Different}\\
-\multicolumn{3}{c|}{}  &\multicolumn{6}{c}{Number of Sections}\\
-Trim (m)       & Draft (m)   & Lcg (m)       & 26        &13        &10        &8          &6          &4\\
-\hline
-2.35        &13.11  &-13.02 & 2.01   &2.40    &2.54    &1.65    &0.78    &0.39\\
-1.82        &13.13  &-12.21 &             1.61 &1.86           &2.02    &1.12    &0.24    &-0.16\\
-1.27        &13.15  &-11.38 & 1.20 &1.31       &1.47    &0.57    &-0.30   &-0.68\\
-0.73        &13.16  &-10.58 &             0.80 &0.79           &0.95    &0.00    &-0.88   &-1.20\\
-0.20        &13.18  &-9.79   & 0.39 &0.26       &0.42    &-0.50   &-1.37   &-1.71\\
--0.32      &13.20  &-9.01   & 0.00 &-0.26     &-0.11   &-1.01   &-1.87   &-2.22\\
--0.82      &13.21  &-8.25   & -0.40 &-0.76   &-0.61   &-1.54   &-2.40   &-2.72\\
--1.34      &13.23  &-7.47   &             -0.80 &-1.28        &-1.12   &-2.03   &-2.93   &-3.20\\
--1.85      &13.25  &-6.71   &             -1.21 &-1.79        &-1.66   &-2.57   &-3.44   &-3.79\\
--2.35      &13.26  &-5.96   & -1.61 &-2.29   &-2.14   &-3.08   &-3.94   &-4.29\\
+\begin{tabular}{rrrc@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r}
+\multicolumn{3}{c}{Real Values}& &\multicolumn{6}{c}{SCM Trim for 26 to 4 Sections}\\[0.1ex] \cline{1-3} \cline{5-10}
+\\[-1.5ex]
+Trim (m)       & Draft (m)   & Lcg (m) &      & 26        &13        &10        &8          &6          &4\\
+\hline \rule{0pt}{3ex}
+2.35        &13.11  &-13.02 && 2.01   &2.40    &2.54    &1.65    &0.78    &0.39\\
+1.82        &13.13  &-12.21 && 1.61 &1.86           &2.02    &1.12    &0.24    &-0.16\\
+1.27        &13.15  &-11.38 && 1.20 &1.31       &1.47    &0.57    &-0.30   &-0.68\\
+0.73        &13.16  &-10.58 && 0.80 &0.79           &0.95    &0.00    &-0.88   &-1.20\\
+0.20        &13.18  &-9.79  && 0.39 &0.26       &0.42    &-0.50   &-1.37   &-1.71\\
+-0.32      &13.20  &-9.01   && 0.00 &-0.26     &-0.11   &-1.01   &-1.87   &-2.22\\
+-0.82      &13.21  &-8.25   && -0.40 &-0.76   &-0.61   &-1.54   &-2.40   &-2.72\\
+-1.34      &13.23  &-7.47   && -0.80 &-1.28        &-1.12   &-2.03   &-2.93   &-3.20\\
+-1.85      &13.25  &-6.71   && -1.21 &-1.79        &-1.66   &-2.57   &-3.44   &-3.79\\
+-2.35      &13.26  &-5.96   && -1.61 &-2.29   &-2.14   &-3.08   &-3.94   &-4.29\\
 \end{tabular}
 \caption{Trim predicted by SCM for 80\%of maximum displacement using six different partitionings.}
 \label{tbl:trimVarPart}
 \end{table}
-\begin{table}
-\begin{tabular}{rrr|rrrrrr}
-\multicolumn{3}{c|}{Real Values}&\multicolumn{6}{c}{SCM Lcg for Different}\\
-\multicolumn{3}{c|}{}&\multicolumn{6}{c}{Number of Sections}\\
-Trim        & Draft   & Lcg       &26        &13        &10        &8          &6          &4\\
-\hline
-2.35        &13.11  &-13.02 &-13.06 &-13.12 &-13.21 &-11.88 &-11.14 &-11.09  \\
-1.82        &13.13  &-12.21 &-12.25 &-12.33 &-12.42 &-11.09 &-10.31 &-10.23  \\
-1.27        &13.15  &-11.38 &-11.42 &-11.49 &-11.61 &-10.27 &-9.48   &-9.43   \\
-0.73        &13.16  &-10.58 &-10.62 &-10.72 &-10.84 &-9.43   &-8.59   &-8.63   \\
-0.20        &13.18  &-9.79   &-9.82   &-9.91   &-10.05 &-8.68   &-7.84   &-7.85   \\
--0.32      &13.20  &-9.01   &-9.04   &-9.13   &-9.26   &-7.92   &-7.08   &-7.06   \\
--0.82      &13.21  &-8.25   &-8.29   &-8.38   &-8.51   &-7.13   &-6.28   &-6.28   \\
--1.34      &13.23  &-7.47   &-7.51   &-7.60   &-7.76   &-6.41   &-5.46   &-5.54   \\
--1.85      &13.25  &-6.71   &-6.74   &-6.83   &-6.95   &-5.60   &-4.69   &-4.64   \\
--2.35      &13.26  &-5.96   &-6.00   &-6.09   &-6.23   &-4.84   &-3.92   &-3.86   \\
+\begin{table}[h!]
+\begin{tabular}{rrrc@{\:\:}@{\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r@{\:\:\:\:}r}
+\multicolumn{3}{c}{Real Values}& &\multicolumn{6}{c}{SCM Lcg for 26 to 4 Sections}\\[0.1ex] \cline{1-3} \cline{5-10}
+\\[-1.5ex]
+Trim (m)       & Draft (m)   & Lcg (m) &      & 26        &13        &10        &8          &6          &4\\
+\hline \rule{0pt}{3ex}
+2.35        &13.11  &-13.02 &&-13.06 &-13.12 &-13.21 &-11.88 &-11.14 &-11.09  \\
+1.82        &13.13  &-12.21 &&-12.25 &-12.33 &-12.42 &-11.09 &-10.31 &-10.23  \\
+1.27        &13.15  &-11.38 &&-11.42 &-11.49 &-11.61 &-10.27 &-9.48   &-9.43   \\
+0.73        &13.16  &-10.58 &&-10.62 &-10.72 &-10.84 &-9.43   &-8.59   &-8.63   \\
+0.20        &13.18  &-9.79   &&-9.82   &-9.91   &-10.05 &-8.68   &-7.84   &-7.85   \\
+-0.32      &13.20  &-9.01   &&-9.04   &-9.13   &-9.26   &-7.92   &-7.08   &-7.06   \\
+-0.82      &13.21  &-8.25   &&-8.29   &-8.38   &-8.51   &-7.13   &-6.28   &-6.28   \\
+-1.34      &13.23  &-7.47   &&-7.51   &-7.60   &-7.76   &-6.41   &-5.46   &-5.54   \\
+-1.85      &13.25  &-6.71   &&-6.74   &-6.83   &-6.95   &-5.60   &-4.69   &-4.64   \\
+-2.35      &13.26  &-5.96   &&-6.00   &-6.09   &-6.23   &-4.84   &-3.92   &-3.86   \\
 \end{tabular}
 \caption{Lcg predicted by SCM for 80\%of maximum displacement using six different partitionings.}
 \label{tbl:lcgVarPart}
@@ -347,7 +353,7 @@ It should be possible to factor out this off-set error
 \begin{figure}[h!]
 \begin{center}
  \begin{tabular}{ccc}
-  \includegraphics[scale=0.15]{figures/TrimVarSec} & & \includegraphics[scale=0.15]{figures/LcgVarSec} \\
+  \includegraphics[scale=1]{figures/TrimVarSec} & & \includegraphics[scale=0.99]{figures/LcgVarSec} \\
   (a) & \hspace{5mm} & (b)
 \end{tabular}  
 \end{center}
@@ -378,7 +384,7 @@ It should be possible to factor out this off-set error
 \begin{figure}[h!]
 \begin{center}
  \begin{tabular}{ccc}
-  \includegraphics[scale=0.12]{figures/ShearForceplot} & & \includegraphics[scale=0.12]{figures/BendingMomentplot} \\
+  \includegraphics[scale=1]{figures/ShearForceplot} & & \includegraphics[scale=1]{figures/BendingMomentplot} \\
   (a) & \hspace{5mm} & (b)
 \end{tabular}  
 \end{center}
